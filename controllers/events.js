@@ -32,11 +32,6 @@ const createEvent = async (req, res = response) => {
             msg: 'Contact your provider'
         });
     }
-
-    res.status(200).json({
-        ok: true,
-        msg: 'createEvent'
-    })
 };
 
 const updateEvent = async (req, res = response) => {
@@ -87,6 +82,7 @@ const deleteEvent = async (req, res = response) => {
     
     const eventId = req.params.id;
     const uid = req.uid
+    
     try {
         
         const event = await Event.findById( eventId );
